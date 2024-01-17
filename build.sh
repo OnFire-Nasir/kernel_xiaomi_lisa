@@ -6,7 +6,7 @@
 SECONDS=0 # builtin bash timer
 TC_DIR="$HOME/tc/clang-r450784d"
 AK3_DIR="$HOME/AnyKernel3"
-DEFCONFIG="lisa_defconfig"
+DEFCONFIG="lisa_stock_defconfig"
 
 ZIPNAME="QuicksilveR-lisa-$(date '+%Y%m%d-%H%M').zip"
 
@@ -39,9 +39,9 @@ echo -e "\nStarting compilation...\n"
 make -j$(nproc --all) $MAKE_PARAMS || exit $?
 make -j$(nproc --all) $MAKE_PARAMS INSTALL_MOD_PATH=modules INSTALL_MOD_STRIP=1 modules_install
 
-kernel="images/kernel"
-dtb="images/dtb.img"
-dtbo="images/dtbo.img"
+kernel="out/arch/arm64/boot/Image"
+dtb="out/arch/arm64/boot/dts/vendor/qcom/yupik.dtb"
+dtbo="out/arch/arm64/boot/dts/vendor/qcom/lisa-sm7325-overlay.dtbo"
 
 if [ ! -f "$kernel" ] || [ ! -f "$dtb" ] || [ ! -f "$dtbo" ]; then
 	echo -e "\nCompilation failed!"
