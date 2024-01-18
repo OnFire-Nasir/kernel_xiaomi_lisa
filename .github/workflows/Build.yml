@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    name: Build KernelSU Stable
+    name: Build
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -38,12 +38,12 @@ jobs:
         cd $GITHUB_WORKSPACE/kernel_workspace/kernel_xiaomi_lisa
         chmod +x build.sh
         ./build.sh
-        filename=$(find . -name Quick* -printf '%f\n')
+        filename=$(find . -name Lode* -printf '%f\n')
         echo $filename
         echo "FILENAME=$filename" >> $GITHUB_ENV
         
     - name: Uploading Kernel
       uses: actions/upload-artifact@v3
       with:
-        name: QuicksilveR_KernelSU
+        name: Lodexxx_KernelSU
         path: ${{ github.workspace }}/kernel_workspace/kernel_xiaomi_lisa/${{ env.FILENAME }}
