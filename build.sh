@@ -39,9 +39,9 @@ echo -e "\nStarting compilation...\n"
 make -j$(nproc --all) $MAKE_PARAMS || exit $?
 make -j$(nproc --all) $MAKE_PARAMS INSTALL_MOD_PATH=modules INSTALL_MOD_STRIP=1 modules_install
 
-kernel="out/arch/arm64/boot/Image"
-dtb="out/arch/arm64/boot/dts/vendor/qcom/yupik.dtb"
-dtbo="out/arch/arm64/boot/dts/vendor/qcom/lisa-sm7325-overlay.dtbo"
+kernel="images/kernel"
+dtb="images/dtb.img"
+dtbo="images/dtbo.img"
 
 if [ ! -f "$kernel" ] || [ ! -f "$dtb" ] || [ ! -f "$dtbo" ]; then
 	echo -e "\nCompilation failed!"
