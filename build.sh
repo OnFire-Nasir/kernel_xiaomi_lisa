@@ -6,9 +6,9 @@
 SECONDS=0 # builtin bash timer
 TC_DIR="$HOME/tc/clang-r450784d"
 AK3_DIR="$HOME/AnyKernel3"
-DEFCONFIG="lisa_stock_defconfig"
+DEFCONFIG="lisa_defconfig"
 
-ZIPNAME="QuicksilveR-lisa-$(date '+%Y%m%d-%H%M').zip"
+ZIPNAME="Lodexxx-lisa-$(date '+%Y%m%d-%H%M').zip"
 
 if test -z "$(git rev-parse --show-cdup 2>/dev/null)" &&
    head=$(git rev-parse --verify HEAD 2>/dev/null); then
